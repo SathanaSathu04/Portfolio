@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sathana K.P | Frontend Developer Portfolio</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Sathana K.P, a Frontend Developer specialized in Angular and React. Based in Tamil Nadu, India.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <app-root></app-root>
+  <script>
+    // Safe, non-looping icon initialization
+    function initLucide() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+
+    // Call at specific intervals to catch Angular rendering
+    window.addEventListener('load', initLucide);
+    setTimeout(initLucide, 200);
+    setTimeout(initLucide, 1000);
+    setTimeout(initLucide, 3000);
+  </script>
+</body>
+</html>
