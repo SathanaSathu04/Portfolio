@@ -20,8 +20,8 @@ declare var lucide: any;
               [style.animation-delay]="i * 0.1 + 's'"
               class="animate-slide-down">
             <a [href]="link.path" 
-               [class.active]="activeSection === link.id"
-               (click)="scrollTo(link.id, $event)">
+                [class.active]="activeSection === link.id"
+                (click)="scrollTo(link.id, $event)">
               {{ link.label }}
               <span class="link-indicator"></span>
             </a>
@@ -131,7 +131,6 @@ declare var lucide: any;
       width: 100%;
     }
 
-
     .btn-glow {
       position: absolute;
       top: -50%;
@@ -175,11 +174,11 @@ declare var lucide: any;
 
     @keyframes slideDown {
       from { 
-        opacity: 0;
+        opacity: 0; 
         transform: translateY(-20px);
       }
       to { 
-        opacity: 1;
+        opacity: 1; 
         transform: translateY(0);
       }
     }
@@ -269,7 +268,6 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
     
-    // Calculate scroll progress
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     this.scrollProgress = (winScroll / height) * 100;
@@ -295,6 +293,10 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   }
 
   private setupIntersectionObserver() {
+    if (typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
     const options = {
       root: null,
       rootMargin: '-50% 0px -50% 0px',

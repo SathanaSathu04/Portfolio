@@ -12,8 +12,11 @@ declare var lucide: any;
       <div class="container">
         <div class="section-header text-center">
           <p class="subtitle">Portfolio</p>
-          <h2>My <span>Projects</span></h2>
-          <p class="header-desc">Real-world applications built with a focus on performance, scalability, and beautiful user experiences.</p>
+          <h2>Featured <span>Projects</span></h2>
+          <p class="header-desc">
+            Production web platforms built with Angular, TypeScript, and modern API architectures, 
+            focused on reliable workflows, scalability, and seamless user experiences.
+          </p>
         </div>
 
         <div class="projects-timeline">
@@ -84,7 +87,7 @@ declare var lucide: any;
     .header-desc {
       color: var(--text-muted);
       font-size: 1.1rem;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
       line-height: 1.8;
     }
@@ -163,7 +166,7 @@ declare var lucide: any;
     /* --- Card --- */
     .project-content {
       width: 100%;
-      max-width: 520px;
+      max-width: 560px;
       padding: 3rem;
       border-radius: 28px;
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.5) 100%);
@@ -208,10 +211,9 @@ declare var lucide: any;
 
     .project-tags {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       gap: 0.6rem;
       margin-bottom: 1.5rem;
-      overflow: hidden;
     }
 
     .tag {
@@ -225,7 +227,6 @@ declare var lucide: any;
       letter-spacing: 1px;
       border: 1px solid rgba(56, 189, 248, 0.2);
       white-space: nowrap;
-      flex-shrink: 0;
     }
 
     h3 {
@@ -326,37 +327,57 @@ export class ProjectsComponent implements AfterViewInit, OnDestroy {
 
   projects = [
     {
+      title: 'Healthcare Management Platform',
+      description: 'An enterprise healthcare platform managing patient consultations, clinic appointment lifecycles, and queue automation with real-time status handling.',
+      tags: ['Angular', 'TypeScript', 'RxJS', 'REST APIs', 'Queue Management'],
+      icon: 'activity',
+      features: [
+        'Implemented appointment booking, confirmation, rescheduling, and cancellation workflows.',
+        'Developed doctor appointment queue management with patient check-in, call, recall, skip, and consultation status management.',
+        'Implemented walk-in consultation functionality, including token generation, queue position, and estimated waiting time.',
+        'Developed recurring appointment workflows with occurrence-level and series-level status handling.',
+        'Integrated APIs for appointment operations, doctor availability, patient consultation data, and queue management.',
+        'Implemented patient and doctor workflows based on backend-provided statuses and eligibility rules.'
+      ],
+      meta: [
+        { icon: 'building-2', label: 'Eastencher Software' },
+        { icon: 'calendar', label: '2026' },
+        { icon: 'shield-check', label: 'Healthcare' }
+      ]
+    },
+    {
       title: 'Homeplus Services',
-      description: 'A full-featured modular Angular application for a home services platform, featuring complex state management, lazy-loaded modules, and a fully responsive UI architecture.',
-      tags: ['Angular', 'TypeScript', 'RxJS', 'SCSS'],
+      description: 'A modular multi-service community management web application facilitating visitor access, utility billing, payment processing, and room reservations.',
+      tags: ['Angular', 'TypeScript', 'RxJS', 'Billing & Payments', 'REST APIs'],
       icon: 'home',
       features: [
-        'Implemented reusable component library with dynamic forms and custom validators',
-        'Integrated RESTful APIs with Angular HttpClient and managed app state using RxJS BehaviorSubjects',
-        'Built responsive layouts using CSS Grid and Flexbox that scale across all device sizes',
-        'Applied lazy-loading and route guards for improved performance and secure navigation'
+        'Implemented visitor management functionality, including visitor check-in and QR code generation.',
+        'Developed partial payment functionality for managing payment transactions and outstanding balances.',
+        'Implemented electricity bill management and payment-related workflows.',
+        'Developed invoice creation functionality with billing details and payment information.',
+        'Integrated REST APIs for visitor management, billing, payments, and invoice operations.',
+        'Implemented booking management features, including booking creation, modification, cancellation, and room availability.'
       ],
       meta: [
         { icon: 'building-2', label: 'Logicfocus' },
-        { icon: 'calendar', label: '2025' },
-        { icon: 'users', label: 'Live Product' }
+        { icon: 'calendar', label: '2025 – 2026' },
+        { icon: 'users', label: 'Community Platform' }
       ]
     },
     {
       title: 'Meetplus',
-      description: 'A real-time meeting and appointment booking management system with interactive dashboards, role-based access control, and seamless backend API integration.',
-      tags: ['Angular', 'RxJS', 'CRUD Operations', 'REST APIs'],
+      description: 'A real-time appointment and room reservation system providing dynamic calendar availability, reservation workflows, and application data management.',
+      tags: ['Angular', 'TypeScript', 'RxJS', 'REST APIs', 'Scheduling'],
       icon: 'calendar-check',
       features: [
-        'Developed role-based dashboards for Admin, Manager and User with distinct access controls',
-        'Built real-time booking features with conflict detection and calendar view integration',
-        'Implemented clean code architecture with modular services and maintainable component design',
-        'Collaborated closely with backend team for smooth API integration and data flow management'
+        'Implemented booking management functionality, including creating, editing, and cancelling bookings.',
+        'Integrated APIs for room availability, scheduling, and booking details.',
+        'Developed booking workflows to manage reservations and related application data.'
       ],
       meta: [
         { icon: 'building-2', label: 'Logicfocus' },
         { icon: 'calendar', label: '2025' },
-        { icon: 'users', label: 'Live Product' }
+        { icon: 'clock', label: 'Scheduling System' }
       ]
     }
   ];
@@ -377,6 +398,12 @@ export class ProjectsComponent implements AfterViewInit, OnDestroy {
   }
 
   private setupScrollAnimation() {
+    if (typeof IntersectionObserver === 'undefined') {
+      const items = document.querySelectorAll('.project-item');
+      items.forEach(item => item.classList.add('active'));
+      return;
+    }
+
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

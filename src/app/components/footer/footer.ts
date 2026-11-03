@@ -14,24 +14,25 @@ declare var lucide: any;
             <a href="#" class="logo">Sathana<span>.K.P</span></a>
             <p class="brand-desc">
               Building high-performance, visually stunning web applications with 
-              a focus on user experience and technical excellence.
+              modern frontend architecture, scalable ASP.NET Core backends, and robust engineering standards.
             </p>
 
             <div class="brand-tags">
               <span class="brand-tag">Angular</span>
-              <span class="brand-tag">React</span>
+              <span class="brand-tag">Full Stack</span>
               <span class="brand-tag">TypeScript</span>
-              <span class="brand-tag">RxJS</span>
+              <span class="brand-tag">ASP.NET Core</span>
+              <span class="brand-tag">Azure DevOps</span>
             </div>
 
             <div class="brand-stats">
               <div class="bstat">
-                <span class="bstat-num">2</span>
+                <span class="bstat-num">3</span>
                 <span class="bstat-label">Live Projects</span>
               </div>
               <div class="bstat-divider"></div>
               <div class="bstat">
-                <span class="bstat-num">1.4+</span>
+                <span class="bstat-num">~2</span>
                 <span class="bstat-label">Years Exp.</span>
               </div>
               <div class="bstat-divider"></div>
@@ -157,36 +158,6 @@ declare var lucide: any;
       gap: 2rem;
       margin-top: 2rem;
     }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .social-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--glass-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      transition: var(--transition);
-    }
-
-    .social-btn:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .social-btn i { width: 20px; height: 20px; }
-
 
     .bstat {
       display: flex;

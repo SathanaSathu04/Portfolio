@@ -23,14 +23,19 @@ declare var lucide: any;
           </h1>
           
           <p class="description animate-reveal" style="animation-delay: 0.4s">
-            I'm <span class="highlight">Sathana K.P</span>, a Frontend Developer specialized in building 
-            high-performance, visually stunning web applications with Angular & React.
+            I'm <span class="highlight">Sathana K.P</span>, a Frontend &amp; Full Stack Developer with around 
+            2 years of experience specialized in engineering high-performance, responsive web applications 
+            with Angular, TypeScript &amp; ASP.NET Core.
           </p>
           
           <div class="cta-group animate-reveal" style="animation-delay: 0.6s">
             <a href="#projects" class="btn-primary">
               Explore Projects
               <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="#experience" class="btn-secondary">
+              View Experience
+              <i data-lucide="briefcase"></i>
             </a>
           </div>
         </div>
@@ -39,19 +44,22 @@ declare var lucide: any;
           <div class="visual-card glass-card">
             <div class="card-header">
               <div class="dots"><span></span><span></span><span></span></div>
+              <span class="code-title">developer.ts</span>
             </div>
             <div class="card-body">
               <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = &#123;
   name: <span class="code-string">'Sathana K.P'</span>,
-  role: <span class="code-string">'Frontend Expert'</span>,
-  tech: [<span class="code-string">'Angular'</span>, <span class="code-string">'React'</span>],
-  vision: <span class="code-string">'Build the Future'</span>
+  role: <span class="code-string">'Frontend &amp; Full Stack'</span>,
+  experience: <span class="code-string">'~2 Years'</span>,
+  tech: [<span class="code-string">'Angular'</span>, <span class="code-string">'TypeScript'</span>, <span class="code-string">'ASP.NET Core'</span>],
+  tools: [<span class="code-string">'Azure DevOps'</span>, <span class="code-string">'Git'</span>],
+  focus: <span class="code-string">'Full Stack Architecture'</span>
 &#125;;</code></pre>
             </div>
           </div>
           <div class="floating-badge badge-1 glass-card">
-            <i data-lucide="code-2"></i>
-            <span>Clean Code</span>
+            <i data-lucide="layers"></i>
+            <span>Full Stack Dev</span>
           </div>
           <div class="floating-badge badge-2 glass-card">
             <i data-lucide="zap"></i>
@@ -171,42 +179,35 @@ declare var lucide: any;
     .cta-group {
       display: flex;
       align-items: center;
-      gap: 3rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .social-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .social-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-    }
-
-    .social-links { display: flex; gap: 1rem; }
-    .social-links a {
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--glass);
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      padding: 0.8rem 1.8rem;
+      border-radius: 100px;
+      font-weight: 600;
       border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      color: var(--text-muted);
+      cursor: pointer;
       transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
     }
 
-    .social-links a:hover {
-      background: var(--gradient-1);
-      color: white;
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-glow);
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary i {
+      width: 18px;
+      height: 18px;
+      color: var(--primary);
     }
 
     /* Visual Side */
@@ -223,9 +224,18 @@ declare var lucide: any;
     .visual-card:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
 
     .card-header {
-      padding: 1rem;
+      padding: 0.8rem 1.2rem;
       background: rgba(255,255,255,0.03);
       border-bottom: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .code-title {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: 'Fira Code', monospace;
     }
 
     .dots { display: flex; gap: 6px; }
@@ -234,28 +244,28 @@ declare var lucide: any;
     .dots span:nth-child(2) { background: #f59e0b; }
     .dots span:nth-child(3) { background: #10b981; }
 
-    .card-body { padding: 2rem; font-family: 'Fira Code', monospace; font-size: 0.9rem; }
+    .card-body { padding: 1.8rem; font-family: 'Fira Code', monospace; font-size: 0.88rem; }
     .code-keyword { color: #c084fc; }
     .code-variable { color: #38bdf8; }
     .code-string { color: #10b981; }
 
     .floating-badge {
       position: absolute;
-      padding: 1rem 1.5rem;
+      padding: 0.9rem 1.3rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
       border-radius: 15px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       box-shadow: var(--shadow-lg);
       animation: float 4s infinite alternate ease-in-out;
     }
 
     .badge-1 { top: -20px; right: -20px; }
-    .badge-2 { bottom: -20px; left: -40px; animation-delay: -2s; }
+    .badge-2 { bottom: -20px; left: -30px; animation-delay: -2s; }
 
-    .floating-badge i { color: var(--primary); }
+    .floating-badge i { color: var(--primary); width: 18px; height: 18px; }
 
     @keyframes float {
       from { transform: translateY(0); }
@@ -323,7 +333,7 @@ declare var lucide: any;
     @media (max-width: 992px) {
       .hero-container { grid-template-columns: 1fr; text-align: center; }
       .description { margin-left: auto; margin-right: auto; }
-      .cta-group { flex-direction: column; }
+      .cta-group { justify-content: center; }
       .hero-visual { display: none; }
     }
 

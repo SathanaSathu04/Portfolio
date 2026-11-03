@@ -13,19 +13,23 @@ declare var lucide: any;
         <div class="section-header text-center">
           <p class="subtitle">My Journey</p>
           <h2>Work <span>Experience</span></h2>
+          <p class="section-tagline">Around 2 years of industry experience engineering production web platforms</p>
         </div>
 
         <div class="timeline">
           <div class="timeline-item glass-card" *ngFor="let exp of experiences">
             <div class="timeline-dot"></div>
-            <div class="exp-date">{{ exp.date }}</div>
+            <div class="exp-header">
+              <span class="exp-date">{{ exp.date }}</span>
+              <span class="exp-type">{{ exp.type }}</span>
+            </div>
             <div class="exp-content">
               <h3>{{ exp.role }}</h3>
               <p class="company">{{ exp.company }}</p>
               <ul>
                 <li *ngFor="let bullet of exp.bullets">
                   <i data-lucide="check-circle-2"></i>
-                  {{ bullet }}
+                  <span>{{ bullet }}</span>
                 </li>
               </ul>
             </div>
@@ -58,7 +62,12 @@ declare var lucide: any;
       background: var(--gradient-1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      position: relative;
+    }
+
+    .section-tagline {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 0.8rem;
     }
 
     .timeline {
@@ -98,7 +107,7 @@ declare var lucide: any;
     }
 
     .timeline-item:hover {
-      transform: translateY(-5px); /* Only move up, not sideways to keep timeline aligned */
+      transform: translateY(-5px);
       border-color: var(--primary);
       box-shadow: 0 20px 40px rgba(0,0,0,0.4), var(--shadow-glow);
     }
@@ -122,16 +131,34 @@ declare var lucide: any;
       box-shadow: 0 0 25px var(--primary);
     }
 
+    .exp-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
     .exp-date {
       color: var(--primary);
       font-weight: 800;
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 1rem;
       display: inline-block;
       padding: 0.4rem 1rem;
       background: rgba(56, 189, 248, 0.1);
+      border-radius: 100px;
+    }
+
+    .exp-type {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.35rem 0.8rem;
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 100px;
     }
 
@@ -144,7 +171,7 @@ declare var lucide: any;
     .company { 
       color: var(--text-main); 
       font-weight: 700; 
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-bottom: 2rem; 
       display: flex;
       align-items: center;
@@ -167,16 +194,17 @@ declare var lucide: any;
     
     ul li { 
       display: flex; 
+      align-items: flex-start;
       gap: 1rem; 
       color: var(--text-muted);
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       line-height: 1.6;
     }
     
     ul li i { 
       color: var(--primary); 
-      width: 20px; 
-      height: 20px;
+      width: 18px; 
+      height: 18px;
       flex-shrink: 0; 
       margin-top: 4px; 
     }
@@ -198,13 +226,28 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
 
   experiences = [
     {
-      date: 'Jan 2025 - Current',
-      role: 'Front-end Developer',
-      company: 'Logicfocus Technology Solutions India, Coimbatore',
+      role: 'Frontend Developer',
+      company: 'Eastencher Software Private Limited',
+      date: '07/2026 – Present',
+      type: 'Full-Time',
       bullets: [
-        'Started as a Frontend Developer Intern (3 months) and transitioned to a full-time Frontend Developer based on performance.',
-        'Worked on an ongoing production project using Angular to build responsive UI components.',
-        'Implementing clean code practices and collaborating with the backend team for API integration.'
+        'Develop healthcare application modules using Angular, TypeScript, HTML, and CSS.',
+        'Implement appointment management, doctor availability, appointment queue, and walk-in consultation workflows.',
+        'Integrate REST APIs using Angular services and HttpClient, handling asynchronous operations with RxJS.',
+        'Implement recurring appointment functionality and patient/doctor workflows based on backend-provided statuses and business rules.',
+        'Handle frontend functionality for patient and doctor modules based on application requirements.'
+      ]
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Logicfocus Technology Solutions',
+      date: '01/2025 – 06/2026',
+      type: 'Full-Time',
+      bullets: [
+        'Developed web application modules using Angular and TypeScript.',
+        'Implemented booking management features, including creating, editing, and cancelling bookings.',
+        'Integrated REST APIs to manage application data, room availability, scheduling, and booking details.',
+        'Implemented application functionality based on business requirements and API responses.'
       ]
     }
   ];
@@ -225,6 +268,12 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
   }
 
   private setupScrollAnimation() {
+    if (typeof IntersectionObserver === 'undefined') {
+      const items = document.querySelectorAll('.timeline-item');
+      items.forEach(item => item.classList.add('active'));
+      return;
+    }
+
     const options = { threshold: 0.05 };
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
