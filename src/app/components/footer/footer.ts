@@ -14,14 +14,16 @@ declare var lucide: any;
             <a href="#" class="logo">Sathana<span>.K.P</span></a>
             <p class="brand-desc">
               Building high-performance, visually stunning web applications with 
-              modern frontend architecture, scalable ASP.NET Core backends, and robust engineering standards.
+              modern frontend architecture, scalable Node.js &amp; Express.js backends, and robust engineering standards.
             </p>
 
             <div class="brand-tags">
               <span class="brand-tag">Angular</span>
               <span class="brand-tag">Full Stack</span>
               <span class="brand-tag">TypeScript</span>
-              <span class="brand-tag">ASP.NET Core</span>
+              <span class="brand-tag">Node.js</span>
+              <span class="brand-tag">Express.js</span>
+              <span class="brand-tag">MongoDB</span>
               <span class="brand-tag">Azure DevOps</span>
             </div>
 

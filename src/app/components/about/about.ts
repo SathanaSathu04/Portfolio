@@ -27,7 +27,7 @@ declare var lucide: any;
               </div>
               <div class="visual-box quaternary-box glass-card">
                 <i data-lucide="server"></i>
-                <span class="box-label">ASP.NET Core</span>
+                <span class="box-label">Node.js</span>
               </div>
               <div class="experience-card glass-card">
                 <span class="number">~2</span>
@@ -51,7 +51,7 @@ declare var lucide: any;
               </p>
               <p>
                 My technical approach combines <span class="text-accent">reactive UI architecture</span> using Angular &amp; TypeScript with 
-                solid backend engineering principles in ASP.NET Core, C#, MySQL, and team collaboration in Azure DevOps (Azure Repos, raising PRs, and work item tracking).
+                solid backend engineering principles in Node.js, Express.js, MongoDB, Mongoose, and team collaboration in Azure DevOps (Azure Repos, raising PRs, and work item tracking).
               </p>
               
               <div class="stats-row">
@@ -92,7 +92,7 @@ declare var lucide: any;
               <h4>Full Stack Development</h4>
               <p>
                 Architecting end-to-end web applications combining dynamic, reactive Angular frontends 
-                with robust ASP.NET Core Web APIs, ensuring cohesive data flow, clean architecture, and high reliability.
+                with scalable Node.js &amp; Express.js RESTful APIs and MongoDB, ensuring cohesive data flow, clean architecture, and high reliability.
               </p>
             </div>
 
@@ -115,8 +115,8 @@ declare var lucide: any;
               <div class="interest-tag">Backend</div>
               <h4>Backend Systems &amp; RESTful APIs</h4>
               <p>
-                Developing RESTful APIs, implementing controller-service-repository patterns, dependency injection, 
-                middleware, and efficient business logic with ASP.NET Core and C#.
+                Developing RESTful APIs, implementing modular controller-service patterns, middleware, 
+                authentication, and efficient business logic with Node.js and Express.js.
               </p>
             </div>
 
@@ -124,10 +124,10 @@ declare var lucide: any;
               <div class="interest-icon-wrap">
                 <i data-lucide="database"></i>
               </div>
-              <div class="interest-tag">Data &amp; Version Control</div>
-              <h4>Database &amp; Azure DevOps</h4>
+              <div class="interest-tag">Database &amp; Version Control</div>
+              <h4>MongoDB, Mongoose &amp; Azure DevOps</h4>
               <p>
-                Managing relational databases with MySQL, optimizing CRUD queries, and collaborating within 
+                Managing NoSQL databases with MongoDB &amp; Mongoose ODM, data modeling, optimizing queries, and collaborating within 
                 agile development workflows using Azure DevOps for work item tracking, Azure Repos, and raising PRs for code reviews.
               </p>
             </div>

@@ -25,7 +25,7 @@ declare var lucide: any;
           <p class="description animate-reveal" style="animation-delay: 0.4s">
             I'm <span class="highlight">Sathana K.P</span>, a Frontend &amp; Full Stack Developer with around 
             2 years of experience specialized in engineering high-performance, responsive web applications 
-            with Angular, TypeScript &amp; ASP.NET Core.
+            with Angular, TypeScript, Node.js &amp; Express.js.
           </p>
           
           <div class="cta-group animate-reveal" style="animation-delay: 0.6s">
@@ -51,7 +51,8 @@ declare var lucide: any;
   name: <span class="code-string">'Sathana K.P'</span>,
   role: <span class="code-string">'Frontend &amp; Full Stack'</span>,
   experience: <span class="code-string">'~2 Years'</span>,
-  tech: [<span class="code-string">'Angular'</span>, <span class="code-string">'TypeScript'</span>, <span class="code-string">'ASP.NET Core'</span>],
+  tech: [<span class="code-string">'Angular'</span>, <span class="code-string">'TypeScript'</span>, <span class="code-string">'Node.js'</span>, <span class="code-string">'Express.js'</span>],
+  database: [<span class="code-string">'MongoDB'</span>, <span class="code-string">'Mongoose'</span>],
   tools: [<span class="code-string">'Azure DevOps'</span>, <span class="code-string">'Git'</span>],
   focus: <span class="code-string">'Full Stack Architecture'</span>
 &#125;;</code></pre>

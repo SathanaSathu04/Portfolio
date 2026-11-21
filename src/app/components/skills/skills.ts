@@ -367,28 +367,28 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
       description: 'Semantic HTML, responsive layouts, Flexbox, Grid, and CSS styling.'
     },
     {
-      name: 'ASP.NET Core',
+      name: 'Node.js',
       category: 'Backend',
       icon: 'server',
-      description: 'Web API development, controllers, services, middleware, dependency injection, routing, and request handling.'
+      description: 'Asynchronous event-driven runtime, server-side development, non-blocking I/O, and RESTful API architecture.'
     },
     {
-      name: 'C#',
-      category: 'Language / Backend',
-      icon: 'terminal',
-      description: 'Object-oriented programming, classes, interfaces, exception handling, LINQ, and asynchronous programming.'
-    },
-    {
-      name: 'Backend Architecture',
-      category: 'Architecture',
+      name: 'Express.js',
+      category: 'Backend',
       icon: 'network',
-      description: 'Controllers, services, repositories, business logic implementation, and API development.'
+      description: 'Web application framework, middleware pipelines, routing, controller-service patterns, and RESTful APIs.'
     },
     {
-      name: 'Database (MySQL)',
+      name: 'MongoDB',
       category: 'Database',
       icon: 'database',
-      description: 'MySQL, database connectivity, SQL queries, CRUD operations, and data handling.'
+      description: 'NoSQL document database, collections, schema design, indexing, CRUD operations, and aggregation pipelines.'
+    },
+    {
+      name: 'Mongoose',
+      category: 'Database / ODM',
+      icon: 'terminal',
+      description: 'Object Data Modeling (ODM) library, schema definitions, validation, middleware hooks, and MongoDB connectivity.'
     }
   ];
 
